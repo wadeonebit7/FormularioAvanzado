@@ -11,23 +11,23 @@ Aplicación web de libro de visitas con validación de formulario en tiempo real
 
 ## Requisitos previos
 
-- Node.js
-- MySQL local
+- Node.js v18 o superior
+- MySQL corriendo localmente
 
 ## Instalación
 
 
 1. Clona el repositorio e instala las dependencias:
 
-\```bash
+```bash
 git clone <url-del-repositorio>
 cd libro-visitas
 npm install
-\```
+```
 
 2. Crea la base de datos en MySQL:
 
-\```sql
+```sql
 CREATE DATABASE libro_visitas;
 USE libro_visitas;
 
@@ -38,15 +38,43 @@ CREATE TABLE visitas(
     comentario TEXT NOT NULL,
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-\```
+```
 
-3. Inicia el servidor:
+3. Configura la conexión en `db.js` si tu MySQL usa usuario o contraseña distintos:
 
-\```bash
+```javascript
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",      // tu usuario
+    password: "",      // tu contraseña
+    database: "libro_visitas"
+});
+```
+
+4. Inicia el servidor:
+
+```bash
 node server.js
-\```
+```
 
-4. Abre el navegador en `http://localhost:3000`
+5. Abre el navegador en `http://localhost:3000`
+
+## Estructura del proyecto
+
+```
+libro-visitas/
+├── public/
+│   ├── css/
+│   │   └── style.css
+│   ├── index.html
+│   └── script.js
+├── app.js
+├── db.js
+├── server.js
+├── package-lock.json
+├── package.json
+└── README.md
+```
 
 ## Endpoints
 
