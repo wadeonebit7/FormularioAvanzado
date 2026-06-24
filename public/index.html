@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Libro de Visitas</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        
+        <h1>Libro de Visitas</h1>
+
+        <div class="contenedor-principal">
+            <div class="col-formulario">
+
+                <form id="formulario">
+
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" placeholder="Nombre">
+                        <span class="error-message" id="statusNombre"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">Correo</label>
+                        <input type="email" id="correo" placeholder="Correo">
+                        <span class="error-message" id="statusCorreo"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="comentario">Comentario</label>
+                        <textarea id="comentario" placeholder="Comentario"></textarea>
+                        <span class="error-message" id="statusComentario"></span>
+                    </div>
+                    
+                    <button id="btnSubmit" type="submit" disabled>Registrar</button>
+                </form>
+
+                <button id="btnCargar">Cargar último comentario</button>
+                <div id="ultimoRegistro"></div>
+            </div>
+        <div class="col-comentarios">
+            <h2>Comentarios en tiempo real</h2>
+            <div id="listaComentarios"></div>
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

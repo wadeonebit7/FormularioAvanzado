@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #1a1a1a;
+    padding: 2rem 1rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.contenedor-principal {
+    display: flex;
+    gap: 1.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.col-formulario,
+.col-comentarios {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: #1a1a1a;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: #fafafa;
+    transition: border-color 0.2s;
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+    background: #fff;
+}
+
+.campo input.valid,
+.campo textarea.valid {
+    border-color: #27ae60;
+    background: #f0fff4;
+}
+
+.campo input.invalid,
+.campo textarea.invalid {
+    border-color: #e74c3c;
+    background: #fff5f5;
+}
+
+.error-message {
+    font-size: 0.8rem;
+    color: #e74c3c;
+}
+
+.success-message {
+    font-size: 0.8rem;
+    color: #27ae60;
+}
+
+#btnSubmit {
+    width: 100%;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#btnSubmit:hover:not(:disabled) {
+    background-color: #357abd;
+}
+
+#btnSubmit:disabled {
+    background-color: #a0bfdf;
+    cursor: not-allowed;
+}
+
+#btnCargar {
+    display: block;
+    margin: 0.8rem auto 0;
+    padding: 8px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: transparent;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#btnCargar:hover {
+    background: #f0f0f0;
+}
+
+#ultimoRegistro {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: #555;
+    min-height: 24px;
+    text-align: center;
+}
+
+#listaComentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#listaComentarios div {
+    padding: 10px 14px;
+    background: #f7f8fa;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
